@@ -1,0 +1,3 @@
+package com.example.mvidecomposeweather.presentation.favorite
+
+interface FavoriteComponent
