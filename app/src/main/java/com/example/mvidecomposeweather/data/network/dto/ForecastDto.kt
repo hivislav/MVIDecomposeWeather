@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class ForecastDto(
     @SerializedName("forecastday")
-    val forecastDat: List<DayDto>?
+    val forecastDay: List<DayDto>?
 )
