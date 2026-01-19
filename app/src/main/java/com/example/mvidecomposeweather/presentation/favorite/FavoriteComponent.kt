@@ -1,3 +1,11 @@
 package com.example.mvidecomposeweather.presentation.favorite
 
-interface FavoriteComponent
+import com.example.mvidecomposeweather.domain.entity.City
+import kotlinx.coroutines.flow.StateFlow
+
+interface FavoriteComponent {
+    val state: StateFlow<FavoriteStore.State>
+    fun onCityItemClick(city: City)
+    fun onClickSearch()
+    fun onClickAddToFavorite()
+}
