@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.parcelize)
+    alias(libs.plugins.serialization)
 }
 
 android {
@@ -87,6 +88,8 @@ dependencies {
     implementation(libs.retrofit.gson.converter)
 
     implementation(libs.glide.compose)
+
+    implementation(libs.serialization.core)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
