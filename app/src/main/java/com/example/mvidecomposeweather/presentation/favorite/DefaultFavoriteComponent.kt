@@ -47,7 +47,7 @@ class DefaultFavoriteComponent @AssistedInject constructor(
         }
     }
 
-    override fun onCityItemClick(city: City) {
+    override fun onClickCityItem(city: City) {
         store.accept(FavoriteStore.Intent.CityItemClicked(city = city))
     }
 

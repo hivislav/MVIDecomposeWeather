@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 class DefaultDetailsComponent @AssistedInject constructor(
     private val detailsStoreFactory: DetailsStoreFactory,
     @Assisted("city") private val city: City,
-    @Assisted("onClickBack") private val onClickBack: () -> Unit,
+    @Assisted("onBackClick") private val onBackClick: () -> Unit,
     @Assisted("componentContext") componentContext: ComponentContext
 ) : DetailsComponent,
     ComponentContext by componentContext {
@@ -31,7 +31,7 @@ class DefaultDetailsComponent @AssistedInject constructor(
         scope.launch {
             store.labels.collect {
                 when (it) {
-                    DetailsStore.Label.ClickBack -> onClickBack()
+                    DetailsStore.Label.ClickBack -> onBackClick()
                 }
             }
         }
@@ -49,7 +49,7 @@ class DefaultDetailsComponent @AssistedInject constructor(
     interface Factory {
         fun create(
             @Assisted("city") city: City,
-            @Assisted("onClickBack") onClickBack: () -> Unit,
+            @Assisted("onBackClick") onBackClick: () -> Unit,
             @Assisted("componentContext") componentContext: ComponentContext
         ): DefaultDetailsComponent
     }

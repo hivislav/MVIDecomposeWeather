@@ -16,7 +16,6 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.builtins.serializer
 
 class DefaultRootComponent @AssistedInject constructor(
     private val detailsComponentFactory: DefaultDetailsComponent.Factory,
@@ -43,7 +42,7 @@ class DefaultRootComponent @AssistedInject constructor(
             is Config.Details -> {
                 val component = detailsComponentFactory.create(
                     city = config.city,
-                    onClickBack = {
+                    onBackClick = {
                         navigation.pop()
                     },
                     componentContext = componentContext
@@ -70,7 +69,7 @@ class DefaultRootComponent @AssistedInject constructor(
             is Config.Search -> {
                 val component = searchComponentFactory.create(
                     openReason = config.openReason,
-                    onClickBack = {
+                    onBackClick = {
                         navigation.pop()
                     },
                     onForecastForCityRequested = {

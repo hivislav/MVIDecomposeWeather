@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.StateFlow
 
 interface FavoriteComponent {
     val state: StateFlow<FavoriteStore.State>
-    fun onCityItemClick(city: City)
+    fun onClickCityItem(city: City)
     fun onClickSearch()
     fun onClickAddToFavorite()
 }
