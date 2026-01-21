@@ -1,5 +1,8 @@
 package com.example.mvidecomposeweather.domain.entity
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class City(
     val id: Int,
     val name: String,
