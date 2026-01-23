@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MVIDecomposeWeather</string>
-    <string name="button_add_to_favorite">Add to favorite</string>
-    <string name="search">Search</string>
-    <string name="upcoming">Upcoming</string>
+    <string name="button_add_to_favorite">Добавить в избранное</string>
+    <string name="search">Поиск</string>
+    <string name="upcoming">Прогноз</string>
+    <string name="empty_result_text">По вашему запросу ничего не найдено</string>
+    <string name="error_result_text">Что-то пошло не так</string>
 </resources>
