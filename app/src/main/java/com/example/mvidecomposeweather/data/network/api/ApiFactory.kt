@@ -5,10 +5,13 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
+import java.util.Locale
 
 object ApiFactory {
 
     private const val BASE_URL = "https://api.weatherapi.com/v1/"
+    private const val PARAM_KEY = "key"
+    private const val PARAM_LANG = "lang"
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor { chain ->
@@ -16,7 +19,8 @@ object ApiFactory {
             val newUrl = originalRequest
                 .url
                 .newBuilder()
-                .addQueryParameter("key", BuildConfig.WEATHER_API_KEY)
+                .addQueryParameter(PARAM_LANG, Locale.getDefault().language)
+                .addQueryParameter(PARAM_KEY, BuildConfig.WEATHER_API_KEY)
                 .build()
             val newRequest = originalRequest
                 .newBuilder()

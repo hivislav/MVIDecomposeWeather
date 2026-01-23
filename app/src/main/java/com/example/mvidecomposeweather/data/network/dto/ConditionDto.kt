@@ -1,10 +1,10 @@
 package com.example.mvidecomposeweather.data.network.dto
 
-import kotlinx.serialization.SerialName
+import com.google.gson.annotations.SerializedName
 
 data class ConditionDto(
-    @SerialName("text")
+    @SerializedName("text")
     val text: String?,
-    @SerialName("icon")
+    @SerializedName("icon")
     val iconUrl: String?
 )
